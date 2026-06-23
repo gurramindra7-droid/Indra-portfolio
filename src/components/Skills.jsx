@@ -1,12 +1,36 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { SiOpenjdk, SiPython, SiC } from 'react-icons/si';
+import { 
+  SiOpenjdk, SiPython, SiC, 
+  SiReact, SiJavascript, SiTypescript, SiHtml5, SiCss,
+  SiNodedotjs, SiExpress, 
+  SiMongodb, SiPostgresql, SiMysql, 
+  SiNumpy, SiPandas, SiScikitlearn, SiTensorflow, 
+  SiVercel 
+} from 'react-icons/si';
+import { FaAws } from 'react-icons/fa';
 import { skills } from '../data/portfolio';
 
 const iconMap = {
   SiJava: SiOpenjdk,
   SiPython: SiPython,
   SiC: SiC,
+  SiReact: SiReact,
+  SiJavascript: SiJavascript,
+  SiTypescript: SiTypescript,
+  SiHtml5: SiHtml5,
+  SiCss: SiCss,
+  SiNodedotjs: SiNodedotjs,
+  SiExpress: SiExpress,
+  SiMongodb: SiMongodb,
+  SiPostgresql: SiPostgresql,
+  SiMysql: SiMysql,
+  SiNumpy: SiNumpy,
+  SiPandas: SiPandas,
+  SiScikitlearn: SiScikitlearn,
+  SiTensorflow: SiTensorflow,
+  SiVercel: SiVercel,
+  FaAws: FaAws,
 };
 
 const SkillBar = ({ name, level, icon, index }) => {
