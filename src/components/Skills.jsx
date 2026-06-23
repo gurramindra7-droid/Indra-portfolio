@@ -1,10 +1,33 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { SiOpenjdk, SiPython, SiC } from 'react-icons/si';
 import { skills } from '../data/portfolio';
 
-const SkillBar = ({ name, level, index }) => {
+const iconMap = {
+  SiJava: SiOpenjdk,
+  SiPython: SiPython,
+  SiC: SiC,
+};
+
+const SkillBar = ({ name, level, icon, index }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
+
+  if (icon) {
+    const IconComponent = iconMap[icon];
+    return (
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={isInView ? { opacity: 1, scale: 1 } : {}}
+        transition={{ duration: 0.4, delay: index * 0.05 }}
+        className="flex items-center gap-2 py-1.5"
+      >
+        {IconComponent && <IconComponent className="w-5 h-5 text-gray-300" />}
+        <span className="text-sm font-medium text-gray-300">{name}</span>
+      </motion.div>
+    );
+  }
 
   if (level === undefined) {
     return (
@@ -101,7 +124,7 @@ const Skills = () => {
                 </div>
                 <div className="space-y-1">
                   {category.items.map((skill, i) => (
-                    <SkillBar key={skill.name} name={skill.name} level={skill.level} index={i} />
+                    <SkillBar key={skill.name} name={skill.name} level={skill.level} icon={skill.icon} index={i} />
                   ))}
                 </div>
               </div>

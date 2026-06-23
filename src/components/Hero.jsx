@@ -1,17 +1,11 @@
 import React, { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FiDownload, FiGithub, FiMail } from 'react-icons/fi';
-import { useTypingAnimation } from '../hooks/useTypingAnimation';
-import { personalInfo, typingWords } from '../data/portfolio';
+import { personalInfo } from '../data/portfolio';
 import heroVideo from '../assets/hero video/Create_a_cinematic_portfolio_h.mp4';
 
 const Hero = () => {
   const videoRef = useRef(null);
-  const { text: typedText, cursor } = useTypingAnimation(typingWords, {
-    typingSpeed: 80,
-    deletingSpeed: 40,
-    pauseTime: 2000,
-  });
 
   useEffect(() => {
     // Restore scroll position to top
@@ -68,7 +62,7 @@ const Hero = () => {
               </span>
             </motion.h1>
 
-            {/* Typing Animation */}
+            {/* Static Title */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -76,10 +70,7 @@ const Hero = () => {
               className="mb-6"
             >
               <span className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-300">
-                {typedText}
-                <span className="inline-block w-[3px] h-[1em] ml-1 bg-red-500 align-middle">
-                  {cursor}
-                </span>
+                AI-Native Full-Stack Engineer
               </span>
             </motion.div>
 

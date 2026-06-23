@@ -1,7 +1,7 @@
 export const personalInfo = {
   name: 'Indra',
   brand: 'Indra.dev',
-  role: 'AI Native Engineer',
+  role: 'AI-Native Full-Stack Engineer',
   tagline: 'I build intelligent, scalable, and modern web applications using AI-powered workflows.',
   email: 'gurramindra.7@gmail.com',
   phone: '+91 6301440294',
@@ -11,12 +11,6 @@ export const personalInfo = {
   linkedinUrl: 'https://www.linkedin.com/in/indra-gurram-6221b8398',
 };
 
-export const typingWords = [
-  'AI Native Engineer',
-  'Full-Stack Developer',
-  'AI Solutions Architect',
-  'Open Source Contributor',
-];
 
 export const about = {
   intro: `I'm a passionate AI Native Engineer with expertise in building intelligent applications that bridge the gap between cutting-edge AI and modern web technologies. I specialize in creating scalable, production-ready systems that leverage the power of large language models, vector databases, and agentic workflows.`,
@@ -42,8 +36,9 @@ export const skills = [
     category: 'Programming',
     icon: '💻',
     items: [
-      { name: 'Java', level: 85 },
-      { name: 'Python', level: 90 },
+      { name: 'Java', icon: 'SiJava' },
+      { name: 'Python', icon: 'SiPython' },
+      { name: 'C', icon: 'SiC' },
     ],
   },
   {

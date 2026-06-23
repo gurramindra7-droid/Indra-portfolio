@@ -93,7 +93,7 @@ const About = () => {
             {/* Intro */}
             <h2 className="text-4xl md:text-5xl font-black text-black mb-2">About Me</h2>
             <p className="text-lg font-bold mb-8 text-red-100">
-              {personalInfo.role} based in {personalInfo.location}
+              {personalInfo.role}
             </p>
 
             {/* Professional intro */}
