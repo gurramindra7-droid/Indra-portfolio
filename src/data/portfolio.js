@@ -13,7 +13,7 @@ export const personalInfo = {
 
 
 export const about = {
-  intro: `I'm a passionate AI Native Engineer with expertise in building intelligent applications that bridge the gap between cutting-edge AI and modern web technologies. I specialize in creating scalable, production-ready systems that leverage the power of large language models, vector databases, and agentic workflows.`,
+  intro: `I'm a passionate AI-Native Full-Stack Engineer`,
   careerObjective: `To build the next generation of AI-powered applications that make a real impact — combining rigorous software engineering with state-of-the-art artificial intelligence to solve complex, real-world problems.`,
   education: [
     {
