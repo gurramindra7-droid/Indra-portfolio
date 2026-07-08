@@ -187,10 +187,30 @@ export const socialLinks = [
   },
 ];
 
+export const codingProfiles = [
+  {
+    platform: 'LeetCode',
+    username: 'GURRAM_INDRA',
+    url: 'https://leetcode.com/u/GURRAM_INDRA/',
+    tagline: 'Problem Solving & DSA',
+    gradient: 'from-amber-400 via-orange-500 to-yellow-500',
+    accentColor: '#FFA116',
+  },
+  {
+    platform: 'GeeksforGeeks',
+    username: 'gurrami5lod',
+    url: 'https://www.geeksforgeeks.org/profile/gurrami5lod',
+    tagline: 'Problem Solving & DSA',
+    gradient: 'from-green-400 via-emerald-500 to-teal-500',
+    accentColor: '#2F8D46',
+  },
+];
+
 export const navLinks = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
+  { label: 'Coding', href: '#coding' },
   { label: 'Projects', href: '#projects' },
   { label: 'Experience', href: '#experience' },
   { label: 'Contact', href: '#contact' },

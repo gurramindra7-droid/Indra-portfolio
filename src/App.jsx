@@ -5,6 +5,7 @@ import ParticleBackground from './components/ParticleBackground';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
+import CodingProfiles from './components/CodingProfiles';
 import Projects from './components/Projects';
 import Experience from './components/Experience';
 import SocialLinks from './components/SocialLinks';
@@ -21,6 +22,7 @@ function App() {
         <Hero />
         <About />
         <Skills />
+        <CodingProfiles />
         <Projects />
         <Experience />
         <SocialLinks />
