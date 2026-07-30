@@ -17,16 +17,22 @@ export const about = {
   careerObjective: `To build the next generation of AI-powered applications that make a real impact — combining rigorous software engineering with state-of-the-art artificial intelligence to solve complex, real-world problems.`,
   education: [
     {
-      degree: 'Bachelor of Technology (B.Tech) in Biocomputational Engineering',
-      institution: 'National Institute of Technology Calicut (NIT Calicut)',
+      degree: 'Bachelor of Technology in Bio Science and Engineering',
+      institution: 'National Institute of Technology, Calicut',
       year: '2023 – 2027',
-      description: 'Specialized in Artificial Intelligence, Machine Learning, and Software Engineering.',
+      description: 'CGPA: 7.43/10 | Kerala, India',
     },
     {
-      degree: 'ISRO Robotics Challenge – URSC 2024 (IRoC-U2024)',
-      institution: 'ISRO - URSC',
-      year: '2024',
-      description: 'Participated in the ISRO Robotics Challenge (IRoC-U2024) and worked on robotics-related problem solving, teamwork, and engineering implementation.',
+      degree: 'Class XII (Intermediate)',
+      institution: 'Narayan Jr. College, Nellore',
+      year: '2021 – 2023',
+      description: 'Percentage: 94.6% | Andhra Pradesh, India',
+    },
+    {
+      degree: 'Class X',
+      institution: 'Champion High School, Sullurpeta',
+      year: '2020 – 2021',
+      description: 'Percentage: 100.0% | Andhra Pradesh, India',
     },
   ],
 };
@@ -47,7 +53,6 @@ export const skills = [
     items: [
       { name: 'React', icon: 'SiReact' },
       { name: 'JavaScript', icon: 'SiJavascript' },
-      { name: 'TypeScript', icon: 'SiTypescript' },
       { name: 'HTML', icon: 'SiHtml5' },
       { name: 'CSS', icon: 'SiCss' },
     ],
@@ -65,68 +70,55 @@ export const skills = [
     icon: '🗄️',
     items: [
       { name: 'MongoDB', icon: 'SiMongodb' },
-      { name: 'PostgreSQL', icon: 'SiPostgresql' },
       { name: 'SQL', icon: 'SiMysql' },
     ],
   },
   {
-    category: 'AI & LLMs / Machine Learning',
-    icon: '🤖',
+    category: 'Tools & Platforms',
+    icon: '🛠️',
     items: [
-      { name: 'ML for Data Science & Analytics' },
-      { name: 'Supervised Learning Models' },
-      { name: 'Unsupervised Learning Models' },
-      { name: 'NumPy', icon: 'SiNumpy' },
-      { name: 'Pandas', icon: 'SiPandas' },
-      { name: 'Matplotlib' },
-      { name: 'Scikit-Learn', icon: 'SiScikitlearn' },
-      { name: 'TensorFlow', icon: 'SiTensorflow' },
-      { name: 'Artificial Neural Networks (ANN)' },
-    ],
-  },
-  {
-    category: 'Cloud & DevOps',
-    icon: '☁️',
-    items: [
-      { name: 'AWS', icon: 'FaAws' },
+      { name: 'Git', icon: 'SiGit' },
+      { name: 'GitHub', icon: 'SiGithub' },
       { name: 'Vercel', icon: 'SiVercel' },
+      { name: 'Render', icon: 'SiRender' },
+      { name: 'Postman', icon: 'SiPostman' },
     ],
   },
 ];
 
 export const projects = [
   {
-    id: 'study-focus',
-    title: 'Study Focus Chrome Extension',
+    id: 'secure-splitter',
+    title: 'Secure Splitter with Fraud Detection',
     description:
-      'A productivity Chrome extension that helps students maintain focus by blocking distracting websites, setting Pomodoro timers, tracking study sessions, and providing AI-powered study recommendations.',
-    techStack: ['JavaScript', 'Chrome APIs', 'React', 'Tailwind CSS', 'IndexedDB'],
-    githubUrl: 'https://github.com/gurramindra7-droid/study-focus',
-    liveUrl: 'https://chromewebstore.google.com/detail/study-focus',
-    image: null,
-    gradient: 'from-blue-600 via-cyan-500 to-teal-400',
-  },
-  {
-    id: 'amp-classification',
-    title: 'Multi-Phase Deep Learning Framework for AMP Classification and Toxicity Prediction',
-    description:
-      'Developed a multi-phase machine learning framework for AMP classification, activity prediction, and toxicity analysis using more than 65,000 peptide sequences, achieving over 93% accuracy and 0.99 AUC through ensemble learning approaches. Built and deployed an end-to-end Streamlit web application integrating ProtT5 embeddings, advanced feature engineering, and CNN-BiLSTM based architectures for real-time peptide prediction and analysis.',
-    techStack: ['Python', 'Machine Learning', 'Deep Learning', 'TensorFlow', 'Streamlit', 'XGBoost', 'LightGBM', 'CNN', 'BiLSTM', 'Transformer', 'ProtT5'],
+      'Built a secure expense-splitting app with a heap-based debt simplification algorithm to minimize settlement transactions between group members. Implemented a rule-based fraud detection engine (threshold, velocity, and cycle detection) with JWT authentication and REST APIs to flag suspicious transactions in real time.',
+    techStack: ['Java', 'Spring Boot', 'Spring Data JPA', 'Spring Security', 'JWT', 'MySQL', 'JUnit', 'REST APIs'],
     githubUrl: '#',
     liveUrl: '#',
     image: null,
-    gradient: 'from-cyan-600 via-blue-500 to-indigo-600',
+    gradient: 'from-emerald-600 via-green-500 to-teal-400',
   },
   {
-    id: 'sigma-ai',
-    title: 'SIGMA AI — AI Assistant Platform',
+    id: 'sigma-gpt',
+    title: 'SIGMA GPT — AI Chatbot Platform (ChatGPT Clone)',
     description:
-      'An intelligent AI assistant powered by LangChain and RAG architecture. SIGMA AI leverages retrieval-augmented generation to provide context-aware responses from custom knowledge bases, with support for multi-modal inputs and agentic tool use.',
-    techStack: ['Python', 'LangChain', 'LangGraph', 'OpenAI', 'ChromaDB', 'FastAPI'],
-    githubUrl: 'https://github.com/gurramindra7-droid/sigma-ai',
-    liveUrl: 'https://sigma-ai.vercel.app',
+      'Built a full-stack AI chatbot platform with secure user authentication, persistent chat history, and real-time conversational responses. Integrated the Groq API (Llama 3.3 70B Versatile) with MongoDB Atlas to deliver low-latency AI responses and reliable chat storage for multiple concurrent users. Deployed on Vercel using React.js (Vite) frontend and Node.js/Express.js backend.',
+    techStack: ['React.js', 'Vite', 'Node.js', 'Express.js', 'MongoDB Atlas', 'Groq API', 'JWT', 'Vercel'],
+    githubUrl: '#',
+    liveUrl: 'https://sigma-gpt-lake.vercel.app',
     image: null,
     gradient: 'from-purple-600 via-pink-500 to-red-500',
+  },
+  {
+    id: 'study-focus',
+    title: 'Study Focus — Chrome Extension with Cloud Sync',
+    description:
+      'Built a Chrome Extension combining a website blocker, Pomodoro timer, and study session tracker behind a personalized login dashboard. Implemented cloud sync via a REST API and MongoDB so user preferences, session history, and settings stay consistent across devices. Designed the JSON-based data layer connecting the Chrome Extensions API frontend to the backend sync service.',
+    techStack: ['JavaScript', 'Chrome Extensions API', 'REST API', 'MongoDB', 'JSON'],
+    githubUrl: '#',
+    liveUrl: '#',
+    image: null,
+    gradient: 'from-blue-600 via-cyan-500 to-teal-400',
   },
 ];
 
@@ -134,29 +126,11 @@ export const experience = [
   {
     id: 1,
     type: 'experience',
-    title: 'AWS Developer Intern — Suntech',
+    title: 'AI Full-Stack Developer (Intern) — SUNTECH',
     date: 'May 2026 – July 2026',
     description:
-      'Worked with AWS cloud services and deployment workflows. Assisted in cloud infrastructure setup and monitoring. Gained practical experience in cloud computing and DevOps practices.',
-    tags: ['AWS', 'Cloud', 'DevOps', 'Infrastructure'],
-  },
-  {
-    id: 2,
-    type: 'experience',
-    title: 'Robotics Program Contributor',
-    date: '2025',
-    description:
-      'Contributed to robotics-related projects and technical activities. Worked on problem-solving, collaboration, and engineering implementation. Participated in robotics development and learning initiatives.',
-    tags: ['Robotics', 'Engineering', 'Problem Solving'],
-  },
-  {
-    id: 3,
-    type: 'milestone',
-    title: 'ISRO Robotics Challenge – URSC 2024 (IRoC-U2024)',
-    date: '2024',
-    description:
-      'Participated in the ISRO Robotics Challenge and worked on robotics-related engineering tasks, teamwork, and problem-solving activities.',
-    tags: ['ISRO', 'Robotics', 'IRoC-U2024'],
+      'Worked on AI full-stack projects, building and implementing end-to-end web services for client companies and businesses. Collaborated with the engineering team to design, develop, and deploy full-stack solutions using modern AI-integrated tech stacks.',
+    tags: ['AI', 'Full-Stack', 'Web Services', 'Spring Boot', 'React'],
   },
 ];
 
