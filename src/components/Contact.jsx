@@ -22,6 +22,7 @@ const Contact = () => {
   });
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState('idle'); // idle | sending | success | error
+  const [configError, setConfigError] = useState(false);
 
   const validate = () => {
     const newErrors = {};
@@ -57,10 +58,25 @@ const Contact = () => {
     if (!validate()) return;
 
     setStatus('sending');
+    setConfigError(false);
 
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    console.log('EmailJS config check:', {
+      serviceId: serviceId ?? 'MISSING',
+      templateId: templateId ?? 'MISSING',
+      publicKey: publicKey ? 'set' : 'MISSING',
+    });
+
+    if (!serviceId || !templateId || !publicKey) {
+      console.error('EmailJS env vars missing – check Vercel environment variables and redeploy.');
+      setConfigError(true);
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 5000);
+      return;
+    }
 
     try {
       await emailjs.send(
@@ -250,7 +266,9 @@ const Contact = () => {
           )}
           {status === 'error' && (
             <p className="text-center text-white text-sm font-medium mt-6">
-              Something went wrong. Please try again.
+              {configError
+                ? 'Contact form is misconfigured. Please check environment variables.'
+                : 'Something went wrong. Please try again.'}
             </p>
           )}
 
