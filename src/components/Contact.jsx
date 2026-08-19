@@ -58,23 +58,33 @@ const Contact = () => {
 
     setStatus('sending');
 
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
     try {
       await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        serviceId,
+        templateId,
         {
           firstName: formData.firstName,
           lastName: formData.lastName,
           email: formData.email,
+          reply_to: formData.email,
           message: formData.message,
         },
-        { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY }
+        { publicKey }
       );
       setStatus('success');
       setFormData({ firstName: '', lastName: '', email: '', message: '', permission: false });
       setTimeout(() => setStatus('idle'), 5000);
     } catch (err) {
-      console.error('Email send failed:', err);
+      console.error('EmailJS Error:', {
+        status: err.status || err?.response?.status || 'unknown',
+        text: err.text || err?.response?.data || err.message || 'unknown',
+        serviceId,
+        templateId,
+      });
       setStatus('error');
       setTimeout(() => setStatus('idle'), 5000);
     }
