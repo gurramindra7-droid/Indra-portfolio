@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { FiSend, FiGithub, FiLinkedin, FiMail, FiPhone } from 'react-icons/fi';
+import emailjs from '@emailjs/browser';
 import { personalInfo, socialLinks } from '../data/portfolio';
 
 const iconMap = {
@@ -19,7 +20,22 @@ const Contact = () => {
     message: '',
     permission: false,
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [errors, setErrors] = useState({});
+  const [status, setStatus] = useState('idle'); // idle | sending | success | error
+
+  const validate = () => {
+    const newErrors = {};
+    if (!formData.firstName.trim()) newErrors.firstName = 'First name is required';
+    if (!formData.lastName.trim()) newErrors.lastName = 'Last name is required';
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email';
+    }
+    if (!formData.message.trim()) newErrors.message = 'Message is required';
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -36,12 +52,32 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Placeholder for actual form submission
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
+    if (!validate()) return;
+
+    setStatus('sending');
+
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          message: formData.message,
+        },
+        { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY }
+      );
+      setStatus('success');
+      setFormData({ firstName: '', lastName: '', email: '', message: '', permission: false });
+      setTimeout(() => setStatus('idle'), 5000);
+    } catch (err) {
+      console.error('Email send failed:', err);
+      setStatus('error');
+      setTimeout(() => setStatus('idle'), 5000);
+    }
   };
 
   return (
@@ -101,6 +137,7 @@ const Contact = () => {
                     required
                     className="w-full bg-transparent border-b border-white/40 pb-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-white/70 font-medium rounded-none"
                   />
+                  {errors.firstName && <p className="text-white/80 text-xs mt-1">{errors.firstName}</p>}
                 </div>
                 <div className="relative">
                   <input
@@ -112,6 +149,7 @@ const Contact = () => {
                     required
                     className="w-full bg-transparent border-b border-white/40 pb-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-white/70 font-medium rounded-none"
                   />
+                  {errors.lastName && <p className="text-white/80 text-xs mt-1">{errors.lastName}</p>}
                 </div>
                 <div className="relative">
                   <input
@@ -123,6 +161,7 @@ const Contact = () => {
                     required
                     className="w-full bg-transparent border-b border-white/40 pb-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-white/70 font-medium rounded-none"
                   />
+                  {errors.email && <p className="text-white/80 text-xs mt-1">{errors.email}</p>}
                 </div>
               </div>
 
@@ -137,6 +176,7 @@ const Contact = () => {
                     required
                     className="w-full h-full min-h-[120px] bg-transparent border-b border-white/40 pb-3 text-lg focus:outline-none focus:border-white transition-colors placeholder-white/70 font-medium resize-none rounded-none"
                   />
+                  {errors.message && <p className="text-white/80 text-xs mt-1">{errors.message}</p>}
                 </div>
               </div>
             </div>
@@ -181,15 +221,28 @@ const Contact = () => {
 
                   <button
                     type="submit"
-                    className="px-8 py-3 rounded-full border border-white/40 text-white font-bold flex items-center justify-center gap-3 hover:bg-white hover:text-[#ff2a2a] transition-all duration-300 group whitespace-nowrap self-start sm:self-auto"
+                    disabled={status === 'sending'}
+                    className="px-8 py-3 rounded-full border border-white/40 text-white font-bold flex items-center justify-center gap-3 hover:bg-white hover:text-[#ff2a2a] transition-all duration-300 group whitespace-nowrap self-start sm:self-auto disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {submitted ? 'Sent!' : 'Send'}
+                    {status === 'sending' ? 'Sending...' : status === 'success' ? 'Sent!' : 'Send'}
                     <FiSend className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
                   </button>
                 </div>
               </div>
             </div>
           </form>
+
+          {/* Status messages */}
+          {status === 'success' && (
+            <p className="text-center text-white text-sm font-medium mt-6">
+              Message sent successfully! I'll get back to you soon.
+            </p>
+          )}
+          {status === 'error' && (
+            <p className="text-center text-white text-sm font-medium mt-6">
+              Something went wrong. Please try again.
+            </p>
+          )}
 
           {/* Mobile social links */}
           <div className="flex md:hidden items-center justify-center gap-6 mt-12 pt-8 border-t border-white/20">

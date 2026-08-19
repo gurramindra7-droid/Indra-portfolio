@@ -93,7 +93,7 @@ export const projects = [
     description:
       'Built a secure expense-splitting app with a heap-based debt simplification algorithm to minimize settlement transactions between group members. Implemented a rule-based fraud detection engine (threshold, velocity, and cycle detection) with JWT authentication and REST APIs to flag suspicious transactions in real time.',
     techStack: ['Java', 'Spring Boot', 'Spring Data JPA', 'Spring Security', 'JWT', 'MySQL', 'JUnit', 'REST APIs'],
-    githubUrl: '#',
+    githubUrl: '#TODO: Add your Secure Splitter GitHub repo URL here',
     liveUrl: '#',
     image: null,
     gradient: 'from-emerald-600 via-green-500 to-teal-400',
@@ -115,8 +115,8 @@ export const projects = [
     description:
       'Built a Chrome Extension combining a website blocker, Pomodoro timer, and study session tracker behind a personalized login dashboard. Implemented cloud sync via a REST API and MongoDB so user preferences, session history, and settings stay consistent across devices. Designed the JSON-based data layer connecting the Chrome Extensions API frontend to the backend sync service.',
     techStack: ['JavaScript', 'Chrome Extensions API', 'REST API', 'MongoDB', 'JSON'],
-    githubUrl: '#',
-    liveUrl: '#',
+    githubUrl: 'https://github.com/gurramindra7-droid/study-focus',
+    liveUrl: 'https://github.com/gurramindra7-droid/study-focus',
     image: null,
     gradient: 'from-blue-600 via-cyan-500 to-teal-400',
   },
