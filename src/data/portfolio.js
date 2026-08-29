@@ -98,17 +98,6 @@ export const skills = [
 
 export const projects = [
   {
-    id: 'secure-splitter',
-    title: 'Secure Splitter with Fraud Detection',
-    description:
-      'Built a secure expense-splitting app with a heap-based debt simplification algorithm to minimize settlement transactions between group members. Implemented a rule-based fraud detection engine (threshold, velocity, and cycle detection) with JWT authentication and REST APIs to flag suspicious transactions in real time.',
-    techStack: ['Java', 'Spring Boot', 'Spring Data JPA', 'Spring Security', 'JWT', 'MySQL', 'JUnit', 'REST APIs'],
-    githubUrl: '#TODO: Add your Secure Splitter GitHub repo URL here',
-    liveUrl: '#',
-    image: null,
-    gradient: 'from-emerald-600 via-green-500 to-teal-400',
-  },
-  {
     id: 'sigma-gpt',
     title: 'SIGMA GPT — AI Chatbot Platform (ChatGPT Clone)',
     description:
@@ -131,18 +120,6 @@ export const projects = [
     gradient: 'from-blue-600 via-cyan-500 to-teal-400',
   },
   {
-    id: 'apitrack',
-    title: 'APITRACK',
-    description:
-      'APITRACK is an API monitoring and management project that provides a clean interface for tracking and working with APIs.',
-    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'React'],
-    githubUrl: 'https://github.com/gurramindra7-droid/APITRACK',
-    liveUrl: 'https://apitrack-six.vercel.app/',
-    image: null,
-    gradient: 'from-orange-500 via-amber-500 to-yellow-400',
-    status: null,
-  },
-  {
     id: 'nexora-ai',
     title: 'NEXORA AI',
     description:
@@ -153,6 +130,29 @@ export const projects = [
     image: null,
     gradient: 'from-indigo-600 via-violet-500 to-purple-400',
     status: 'In Progress',
+  },
+  {
+    id: 'secure-splitter',
+    title: 'Secure Splitter with Fraud Detection',
+    description:
+      'Built a secure expense-splitting app with a heap-based debt simplification algorithm to minimize settlement transactions between group members. Implemented a rule-based fraud detection engine (threshold, velocity, and cycle detection) with JWT authentication and REST APIs to flag suspicious transactions in real time.',
+    techStack: ['Java', 'Spring Boot', 'Spring Data JPA', 'Spring Security', 'JWT', 'MySQL', 'JUnit', 'REST APIs'],
+    githubUrl: '#TODO: Add your Secure Splitter GitHub repo URL here',
+    liveUrl: '#',
+    image: null,
+    gradient: 'from-emerald-600 via-green-500 to-teal-400',
+  },
+  {
+    id: 'apitrack',
+    title: 'APITRACK — GATE & Placement Aptitude Preparation',
+    description:
+      'An aptitude practice platform built to help students prepare for GATE and campus placements through quantitative aptitude, logical reasoning, verbal reasoning, practice questions, and mock tests.',
+    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'React'],
+    githubUrl: 'https://github.com/gurramindra7-droid/APITRACK',
+    liveUrl: 'https://apitrack-six.vercel.app/',
+    image: null,
+    gradient: 'from-orange-500 via-amber-500 to-yellow-400',
+    status: null,
   },
 ];
 
