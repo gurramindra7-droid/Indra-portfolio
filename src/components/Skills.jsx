@@ -5,8 +5,10 @@ import {
   SiReact, SiJavascript, SiHtml5, SiCss,
   SiNodedotjs, SiExpress, 
   SiMongodb, SiMysql,
-  SiGit, SiGithub, SiVercel, SiRender, SiPostman
+  SiGit, SiGithub, SiVercel, SiRender, SiPostman,
+  SiNumpy, SiPandas
 } from 'react-icons/si';
+import { FiPieChart, FiBarChart2 } from 'react-icons/fi';
 import { skills } from '../data/portfolio';
 
 const iconMap = {
@@ -26,6 +28,10 @@ const iconMap = {
   SiVercel: SiVercel,
   SiRender: SiRender,
   SiPostman: SiPostman,
+  SiNumpy: SiNumpy,
+  SiPandas: SiPandas,
+  FiPieChart: FiPieChart,
+  FiBarChart2: FiBarChart2,
 };
 
 const SkillBar = ({ name, level, icon, index }) => {

@@ -20,6 +20,16 @@ const ProjectCard = ({ project, index }) => {
         <div className={`h-1.5 w-full bg-gradient-to-r ${project.gradient}`} />
 
         <div className="p-6 md:p-8">
+          {/* Status Badge */}
+          {project.status && (
+            <div className="mb-4">
+              <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-amber-500/15 text-amber-400 border border-amber-500/25">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+                🚧 {project.status}
+              </span>
+            </div>
+          )}
+
           {/* Tech Stack Tags */}
           <div className="flex flex-wrap gap-2 mb-4">
             {project.techStack.slice(0, 4).map((tech) => (
@@ -49,26 +59,30 @@ const ProjectCard = ({ project, index }) => {
 
           {/* Action Links */}
           <div className="flex items-center gap-4">
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm font-medium text-gray-300 hover:text-white transition-colors group/link"
-            >
-              <FiGithub className="w-4 h-4" />
-              <span>Source</span>
-              <span className="inline-block transition-transform duration-300 group-hover/link:translate-x-0.5">→</span>
-            </a>
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm font-medium text-red-400 hover:text-red-300 transition-colors group/link"
-            >
-              <FiExternalLink className="w-4 h-4" />
-              <span>Live Demo</span>
-              <span className="inline-block transition-transform duration-300 group-hover/link:translate-x-0.5">→</span>
-            </a>
+            {project.githubUrl && project.githubUrl !== '#' && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm font-medium text-gray-300 hover:text-white transition-colors group/link"
+              >
+                <FiGithub className="w-4 h-4" />
+                <span>Source</span>
+                <span className="inline-block transition-transform duration-300 group-hover/link:translate-x-0.5">→</span>
+              </a>
+            )}
+            {project.liveUrl && project.liveUrl !== '#' && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm font-medium text-red-400 hover:text-red-300 transition-colors group/link"
+              >
+                <FiExternalLink className="w-4 h-4" />
+                <span>Live Demo</span>
+                <span className="inline-block transition-transform duration-300 group-hover/link:translate-x-0.5">→</span>
+              </a>
+            )}
           </div>
         </div>
       </div>

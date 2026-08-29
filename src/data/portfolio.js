@@ -84,6 +84,16 @@ export const skills = [
       { name: 'Postman', icon: 'SiPostman' },
     ],
   },
+  {
+    category: 'Data Analysis',
+    icon: '📊',
+    items: [
+      { name: 'NumPy', icon: 'SiNumpy' },
+      { name: 'Pandas', icon: 'SiPandas' },
+      { name: 'Matplotlib', icon: 'FiPieChart' },
+      { name: 'Seaborn', icon: 'FiBarChart2' },
+    ],
+  },
 ];
 
 export const projects = [
@@ -119,6 +129,30 @@ export const projects = [
     liveUrl: 'https://github.com/gurramindra7-droid/study-focus',
     image: null,
     gradient: 'from-blue-600 via-cyan-500 to-teal-400',
+  },
+  {
+    id: 'apitrack',
+    title: 'APITRACK',
+    description:
+      'APITRACK is an API monitoring and management project that provides a clean interface for tracking and working with APIs.',
+    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'React'],
+    githubUrl: 'https://github.com/gurramindra7-droid/APITRACK',
+    liveUrl: 'https://apitrack-six.vercel.app/',
+    image: null,
+    gradient: 'from-orange-500 via-amber-500 to-yellow-400',
+    status: null,
+  },
+  {
+    id: 'nexora-ai',
+    title: 'NEXORA AI',
+    description:
+      'NEXORA AI is an AI-powered platform currently under development, focused on AI agents, RAG pipelines, automations, and AI-driven business workflows.',
+    techStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Spring Boot', 'MySQL', 'AI / RAG / Agents'],
+    githubUrl: null,
+    liveUrl: null,
+    image: null,
+    gradient: 'from-indigo-600 via-violet-500 to-purple-400',
+    status: 'In Progress',
   },
 ];
 
