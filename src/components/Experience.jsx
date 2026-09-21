@@ -49,7 +49,7 @@ const TimelineItem = ({ item, index }) => {
           </div>
 
           <h3 className="text-base md:text-lg font-bold text-white mb-2">{item.title}</h3>
-          <p className="text-gray-400 text-sm leading-relaxed mb-4">{item.description}</p>
+          <p className="text-gray-400 text-sm leading-relaxed mb-4 whitespace-pre-line">{item.description}</p>
 
           {/* Tags */}
           <div className="flex flex-wrap gap-1.5">

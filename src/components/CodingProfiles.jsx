@@ -1,12 +1,13 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { FiExternalLink } from 'react-icons/fi';
-import { SiLeetcode, SiGeeksforgeeks } from 'react-icons/si';
+import { SiLeetcode, SiGeeksforgeeks, SiHackerrank } from 'react-icons/si';
 import { codingProfiles } from '../data/portfolio';
 
 const iconMap = {
   LeetCode: SiLeetcode,
   GeeksforGeeks: SiGeeksforgeeks,
+  HackerRank: SiHackerrank,
 };
 
 const AnimeCoderSVG = ({ color = '#FFA116' }) => (

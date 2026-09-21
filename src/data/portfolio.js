@@ -98,6 +98,19 @@ export const skills = [
 
 export const projects = [
   {
+    id: 'flight-price-prediction-ml',
+    title: 'Flight Price Prediction ML',
+    description:
+      'A machine learning web application that predicts flight ticket prices based on inputs like airline, route, departure time, and number of stops. Includes data preprocessing, feature engineering, and model training to deliver accurate fare predictions, deployed as a live web app on Vercel.',
+    techStack: ['Python', 'Machine Learning', 'Regression', 'Pandas', 'NumPy'],
+    githubUrl: 'https://github.com/gurramindra7-droid/flight-price-prediction-ml',
+    liveUrl: 'https://flight-price-app-pi.vercel.app/',
+    image: null,
+    gradient: 'from-sky-600 via-blue-500 to-indigo-400',
+    status: null,
+    date: 'September 2026',
+  },
+  {
     id: 'sigma-gpt',
     title: 'SIGMA GPT — AI Chatbot Platform (ChatGPT Clone)',
     description:
@@ -107,17 +120,31 @@ export const projects = [
     liveUrl: 'https://sigma-gpt-lake.vercel.app',
     image: null,
     gradient: 'from-purple-600 via-pink-500 to-red-500',
+    date: 'May 2026',
   },
   {
     id: 'study-focus',
-    title: 'Study Focus — Chrome Extension with Cloud Sync',
+    title: 'Study Focus',
     description:
-      'Built a Chrome Extension combining a website blocker, Pomodoro timer, and study session tracker behind a personalized login dashboard. Implemented cloud sync via a REST API and MongoDB so user preferences, session history, and settings stay consistent across devices. Designed the JSON-based data layer connecting the Chrome Extensions API frontend to the backend sync service.',
-    techStack: ['JavaScript', 'Chrome Extensions API', 'REST API', 'MongoDB', 'JSON'],
+      'Chrome extension for focused studying with website blocking, Pomodoro timer, study tracking, and cloud-synced productivity data.',
+    techStack: ['Chrome Extension', 'Manifest V3', 'JavaScript', 'React', 'Node.js', 'Express', 'MongoDB', 'JWT'],
     githubUrl: 'https://github.com/gurramindra7-droid/study-focus',
     liveUrl: 'https://github.com/gurramindra7-droid/study-focus',
     image: null,
     gradient: 'from-blue-600 via-cyan-500 to-teal-400',
+    date: '2026',
+  },
+  {
+    id: 'secure-splitter',
+    title: 'Java Splitter',
+    description:
+      'Built a secure expense-splitting app with a heap-based debt simplification algorithm to minimize settlement transactions between group members. Implemented a rule-based fraud detection engine (threshold, velocity, and cycle detection) with JWT authentication and REST APIs to flag suspicious transactions in real time.',
+    techStack: ['Java', 'Spring Boot', 'Spring Data JPA', 'Spring Security', 'JWT', 'MySQL', 'JUnit', 'REST APIs'],
+    githubUrl: '#TODO: Add your Secure Splitter GitHub repo URL here',
+    liveUrl: '#',
+    image: null,
+    gradient: 'from-emerald-600 via-green-500 to-teal-400',
+    date: 'July 2026',
   },
   {
     id: 'nexora-ai',
@@ -130,17 +157,7 @@ export const projects = [
     image: null,
     gradient: 'from-indigo-600 via-violet-500 to-purple-400',
     status: 'In Progress',
-  },
-  {
-    id: 'secure-splitter',
-    title: 'Secure Splitter with Fraud Detection',
-    description:
-      'Built a secure expense-splitting app with a heap-based debt simplification algorithm to minimize settlement transactions between group members. Implemented a rule-based fraud detection engine (threshold, velocity, and cycle detection) with JWT authentication and REST APIs to flag suspicious transactions in real time.',
-    techStack: ['Java', 'Spring Boot', 'Spring Data JPA', 'Spring Security', 'JWT', 'MySQL', 'JUnit', 'REST APIs'],
-    githubUrl: '#TODO: Add your Secure Splitter GitHub repo URL here',
-    liveUrl: '#',
-    image: null,
-    gradient: 'from-emerald-600 via-green-500 to-teal-400',
+    date: 'June 2026',
   },
   {
     id: 'apitrack',
@@ -153,10 +170,20 @@ export const projects = [
     image: null,
     gradient: 'from-orange-500 via-amber-500 to-yellow-400',
     status: null,
+    date: 'April 2026',
   },
 ];
 
 export const experience = [
+  {
+    id: 2,
+    type: 'experience',
+    title: 'AI Web Engineer (Part-time) — CWA-Labs',
+    date: 'Aug 2026 – Present',
+    description:
+      '• Working as an AI Web Engineer, developing and delivering cloud-based resource solutions for multinational corporations (MNCs) on Google Cloud Platform (GCP) and AWS.\n• Designing and provisioning scalable cloud resources and services to support client infrastructure and AI-integrated web applications.\n• Collaborating with cross-functional teams to build reliable, production-grade solutions aligned with client requirements on GCP and AWS environments.',
+    tags: ['AI', 'Cloud', 'GCP', 'AWS', 'Web Engineering'],
+  },
   {
     id: 1,
     type: 'experience',
@@ -211,6 +238,14 @@ export const codingProfiles = [
     tagline: 'Problem Solving & DSA',
     gradient: 'from-green-400 via-emerald-500 to-teal-500',
     accentColor: '#2F8D46',
+  },
+  {
+    platform: 'HackerRank',
+    username: 'gurramindra_7',
+    url: 'https://www.hackerrank.com/profile/gurramindra_7',
+    tagline: 'Problem Solving & Certifications',
+    gradient: 'from-green-500 via-emerald-400 to-lime-400',
+    accentColor: '#00EA64',
   },
 ];
 

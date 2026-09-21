@@ -20,13 +20,18 @@ const ProjectCard = ({ project, index }) => {
         <div className={`h-1.5 w-full bg-gradient-to-r ${project.gradient}`} />
 
         <div className="p-6 md:p-8">
-          {/* Status Badge */}
-          {project.status && (
-            <div className="mb-4">
-              <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-amber-500/15 text-amber-400 border border-amber-500/25">
-                <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
-                🚧 {project.status}
-              </span>
+          {/* Status Badge + Date */}
+          {(project.status || project.date) && (
+            <div className="flex items-center justify-between mb-4">
+              {project.status && (
+                <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full bg-amber-500/15 text-amber-400 border border-amber-500/25">
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+                  🚧 {project.status}
+                </span>
+              )}
+              {project.date && (
+                <span className="text-[10px] md:text-xs text-gray-500 font-medium">{project.date}</span>
+              )}
             </div>
           )}
 
@@ -118,9 +123,11 @@ const Projects = () => {
 
         {/* Project Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {projects.map((project, idx) => (
-            <ProjectCard key={project.id} project={project} index={idx} />
-          ))}
+          {projects
+            .filter((project) => !project.hidden)
+            .map((project, idx) => (
+              <ProjectCard key={project.id} project={project} index={idx} />
+            ))}
         </div>
 
         {/* Bottom accent */}
