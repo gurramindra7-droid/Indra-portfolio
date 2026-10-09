@@ -98,6 +98,17 @@ export const skills = [
 
 export const projects = [
   {
+    id: 'creditwise-loan-approval',
+    title: 'CreditWise — Loan Approval System',
+    description:
+      'Developed a machine learning-based loan approval prediction system that analyzes applicant financial and demographic information to predict loan approval eligibility. The application uses a trained Logistic Regression model and a preprocessing pipeline to process numerical and categorical inputs and generate predictions through an interactive Streamlit interface.',
+    techStack: ['Python', 'Pandas', 'Scikit-learn', 'NumPy', 'Joblib', 'Streamlit', 'Machine Learning', 'Logistic Regression', 'StandardScaler', 'OneHotEncoder', 'SimpleImputer', 'Git', 'GitHub', 'Streamlit Community Cloud'],
+    liveUrl: 'https://creditwise-loan-system-skoc7zpht22cdcdjhsteol.streamlit.app/',
+    image: null,
+    gradient: 'from-emerald-600 via-green-500 to-teal-400',
+    date: 'September 2026',
+  },
+  {
     id: 'flight-price-prediction-ml',
     title: 'Flight Price Prediction ML',
     description:
